@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rebar -j 3 compile
+rebar -j 6 compile
 
 F_APP_SRC="./src/server.app.src"
 F_APP="./ebin/server.app"
@@ -8,6 +8,9 @@ F_APP="./ebin/server.app"
 rm -rf $F_APP_SRC
 rm -rf $F_APP
 
+echo "map_to_record(any),exit(Enter)"
+
+read a
 
 map()
 {
@@ -17,7 +20,7 @@ map()
 	cd ..
 }
 
-if [ "$1" = "" ];then
+if [ "$a" = "" ];then
     echo "exit\n";
 else
     map
